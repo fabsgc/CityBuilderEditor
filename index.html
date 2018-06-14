@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>City Builder Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/require.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <canvas id="map">
+    </canvas>
+    <div id="menu">
+        <div id="menu-tool">
+            <div class="menu-content">
+                <div id="tool-select" class="tool selected">
+                    <span class="fa fa-mouse-pointer"></span>
+                </div>
+                <div id="tool-add" class="tool">
+                    <span class="fa fa-plus"></span>
+                </div>
+                <div id="tool-delete" class="tool">
+                    <span class="fa fa-trash-alt"></span>
+                </div>
+                <div id="tool-save" class="tool">
+                    <span class="fa fa-save"></span>
+                </div>
+            </div>
+        </div>
+        <div id="menu-asset">
+            <div class="menu-title">
+                Assets
+            </div>
+            <div class="menu-content">
+            </div>
+        </div>
+        <div id="menu-tile" class="hidden">
+            <div class="menu-title">
+                Options
+            </div>
+            <div class="menu-sprite">
+
+            </div>
+            <div class="menu-content">
+                <div id="option-rotate" class="option">
+                    <span class="fa fa-redo-alt"></span>
+                </div>
+                <div id="option-delete" class="option">
+                    <span class="fa fa-trash-alt"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sprites" class="hidden">
+        
+    </div>
+</body>
+</html>

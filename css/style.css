@@ -1,0 +1,191 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+    background-image: 
+        linear-gradient(transparent 49px,
+        rgb(30, 30, 30) 50px, 
+        transparent 50px),
+        linear-gradient(90deg,
+        transparent 49px,
+        rgb(30, 30, 30) 50px, 
+        transparent 50px);
+    background-size: 100% 50px, 50px 100%;
+}
+
+#map {
+    margin: 0 0 0 250px;
+    background-image: 
+    linear-gradient(transparent 49px,
+    rgb(30, 30, 30) 50px, 
+    transparent 50px),
+    linear-gradient(90deg,
+    transparent 49px,
+    rgb(30, 30, 30) 50px, 
+    transparent 50px);
+    background-size: 100% 50px, 50px 100%;
+    background-color: rgba(204, 226, 245, 0.5);
+    cursor: pointer;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(105, 135, 161);
+}
+
+.menu-title {
+    background-color: rgb(105, 135, 161);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.menu-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#menu-tool {
+    background-color: rgb(61, 88, 112);
+}
+
+.tool {
+    background-color: rgb(105, 135, 161);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 45px;
+    font-size: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#menu-tool .tool:last-child {
+    margin-right: 0;
+}
+
+#menu-asset {
+    background-color: rgb(61, 88, 112);
+}
+
+.option {
+    background-color: rgb(105, 135, 161);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 45px;
+    font-size: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#menu-asset .option:last-child {
+    margin-right: 0;
+}
+
+.asset {
+    width: 70px;
+    height: 100px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 7px;
+    cursor: pointer;
+    background-color: rgb(125, 178, 199);
+}
+
+.asset img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.asset span {
+    display: inline-block;
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+}
+#menu-tile {
+    background-color: rgb(61, 88, 112);
+}
+
+#menu-tool .selected,
+#menu-tile .selected {
+    border: 2px solid white;
+    line-height: 43px;
+}
+
+#menu-asset .selected {
+    border: 2px solid white;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
