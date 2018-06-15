@@ -186,6 +186,17 @@ App.Config.Sprite = {
             material: "shop-1",
             model: "shop-1",
             selected: false
+        },
+        {
+            id: "windturbine",
+            name: "Wind turbine",
+            width: 5,
+            height: 5,
+            sprite: "asset/sprite/windturbine.png",
+            thumbnail: "asset/thumbnail/windturbine.png",
+            material: "WindTurbine",
+            model: "WindTurbine",
+            selected: false
         }
     ]
 }

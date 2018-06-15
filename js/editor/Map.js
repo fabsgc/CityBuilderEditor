@@ -53,7 +53,7 @@ App.Map = function(){
 
         if (_canvas.getContext) {
             _canvasContext = _canvas.getContext('2d');
-            _canvasContext.globalAlpha = 0.6;
+            _canvasContext.globalAlpha = 0.75;
         }
 
         _canvas.addEventListener('click', TileClickHandler);
