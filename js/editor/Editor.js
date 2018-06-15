@@ -48,6 +48,12 @@ App.Editor = function(){
     var _mapConfig = null;
 
     /**
+     * @type {Object}
+     * @private
+     */
+    var _lastTileClicked = {};
+
+    /**
      * @method App.Map#Init
      * @public
      * @return {void}
@@ -61,6 +67,11 @@ App.Editor = function(){
 
         _save = new App.Save();
         _save.Init();
+
+        _lastTileClicked = {
+            x: 0,
+            y: 0
+        }
 
         _spriteConfig  = App.Config.Sprite;
         _mapConfig     = App.Config.Map;
@@ -116,6 +127,8 @@ App.Editor = function(){
         console.log("Click map handler");
         console.log(e.detail);
 
+        _lastTileClicked = e.detail.tile;
+
         switch(_menu.GetCurrentTool()) {
             case ToolType.Select:
                 DrawOptions(GetTileListByClick(e.detail.tile));
@@ -130,6 +143,8 @@ App.Editor = function(){
 
                 _tiles.push(tile);
                 _map.Draw([tile]);
+
+                DrawOptions(GetTileListByClick(e.detail.tile));
             break;
         }
     }
@@ -200,6 +215,8 @@ App.Editor = function(){
 
         _map.Clear();
         _map.Draw(_tiles);
+
+        DrawOptions(GetTileListByClick(_lastTileClicked));
     }
 
     /**
@@ -216,6 +233,8 @@ App.Editor = function(){
             _map.Clear();
             _map.Draw(_tiles);
         }
+
+        DrawOptions(GetTileListByClick(_lastTileClicked));
     }
 
     /**
@@ -226,8 +245,11 @@ App.Editor = function(){
      */
     function ClearHandler(e) {
         console.log("Clear handler");
+
         _tiles = [];
-        _map.Clear();    
+        _map.Clear();
+
+        DrawOptions(GetTileListByClick(_lastTileClicked));
     }
 
     /**

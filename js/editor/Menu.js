@@ -217,15 +217,17 @@ App.Menu = function(){
                 var name = document.createElement("span");
                 name.innerHTML = "(" + String(sprite.width) + "x" + String(sprite.height) + ")";
 
-                thumbnail.append(image);
-                thumbnail.append(name);
+                thumbnail.appendChild(image);
+                thumbnail.appendChild(name);
 
                 if(sprite.selected) {
                     thumbnail.classList.add("selected");
                     _currentSprite = sprite;
                 }
 
-                $("#menu-asset .menu-content").append(thumbnail);
+                App.Util.GetElementsInContainer("menu-asset", "menu-content").forEach(function(element) {
+                    element.appendChild(thumbnail);
+                });
             }
         });
     }
@@ -303,6 +305,13 @@ App.Menu = function(){
         });
 
         obj.classList.add("selected");
+
+        Array.from(document.getElementsByClassName("tool")).forEach(function(element) {
+            element.classList.remove("selected");
+        });
+
+        _currentTool = ToolType.Add;
+        document.getElementById(_currentTool).classList.add("selected");
 
         console.log(_currentSprite);
     }

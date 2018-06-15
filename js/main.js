@@ -15,6 +15,7 @@ requirejs([
     'data/Map',
     'data/Sprite',
     'editor/Editor',
+    'editor/Util',
     'editor/Map',
     'editor/Menu',
     'editor/Tile',
