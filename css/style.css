@@ -50,25 +50,41 @@ table {
 
 html {
     background-image: 
-        linear-gradient(transparent 49px,
-        rgb(30, 30, 30) 50px, 
-        transparent 50px),
+        linear-gradient(transparent 249px,
+        rgb(20, 20, 20) 250px, 
+        transparent 250px),
         linear-gradient(90deg,
-        transparent 49px,
-        rgb(30, 30, 30) 50px, 
-        transparent 50px);
-    background-size: 100% 50px, 50px 100%;
+        transparent 249px,
+        rgb(20, 20, 20) 250px, 
+        transparent 250px);
+    background-size: 100% 250px, 250px 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(105, 135, 161); 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: rgb(88, 121, 150); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(68, 99, 126); 
 }
 
 #map {
     margin: 0 0 0 250px;
     background-image: 
     linear-gradient(transparent 49px,
-    rgb(30, 30, 30) 50px, 
+    rgb(150, 150, 150) 50px, 
     transparent 50px),
     linear-gradient(90deg,
     transparent 49px,
-    rgb(30, 30, 30) 50px, 
+    rgb(150, 150, 150) 50px, 
     transparent 50px);
     background-size: 100% 50px, 50px 100%;
     background-color: rgba(204, 226, 245, 0.5);
@@ -82,10 +98,12 @@ html {
     width: 250px;
     height: 100%;
     background-color: rgb(105, 135, 161);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .menu-title {
-    background-color: rgb(105, 135, 161);
+    background-color: rgb(114, 151, 184);
     padding: 10px;
     text-align: center;
     color: white;
@@ -107,13 +125,13 @@ html {
 .tool {
     background-color: rgb(105, 135, 161);
     color: white;
-    width: 45px;
-    height: 45px;
+    width: 14%;
+    height: 35px;
     border-radius: 5px;
     display: inline-block;
     text-align: center;
-    line-height: 45px;
-    font-size: 25px;
+    line-height: 35px;
+    font-size: 20px;
     margin-right: 5px;
     cursor: pointer;
 }
@@ -129,12 +147,12 @@ html {
 .option {
     background-color: rgb(105, 135, 161);
     color: white;
-    width: 45px;
-    height: 45px;
+    width: 30%;
+    height: 40px;
     border-radius: 5px;
     display: inline-block;
     text-align: center;
-    line-height: 45px;
+    line-height: 40px;
     font-size: 25px;
     margin-right: 5px;
     cursor: pointer;
@@ -145,13 +163,13 @@ html {
 }
 
 .asset {
-    width: 70px;
-    height: 100px;
+    width: 20%;
+    height: 76px;
     border-radius: 5px;
     display: inline-block;
     text-align: center;
     font-size: 15px;
-    margin-right: 7px;
+    margin-right: 5px;
     cursor: pointer;
     background-color: rgb(125, 178, 199);
 }
@@ -164,22 +182,77 @@ html {
 
 .asset span {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 3px;
     color: white;
     text-align: center;
 }
+
 #menu-tile {
     background-color: rgb(61, 88, 112);
+}
+
+#menu-tile .menu-thumbnail {
+    background-color: white;
+}
+
+#menu-tile .menu-thumbnail img {
+    width: 100px;
+    margin: auto;
+    display: block;
 }
 
 #menu-tool .selected,
 #menu-tile .selected {
     border: 2px solid white;
-    line-height: 43px;
+    line-height: 31px;
 }
 
 #menu-asset .selected {
     border: 2px solid white;
+}
+
+#menu-asset .selected span {
+    margin-top: 5px;
+}
+
+#save {
+    background-color: rgb(234, 245, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#save .save-top {
+    background-color: rgb(67, 104, 136);
+    height: 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+}
+
+#save .save-title {
+    float: left;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0 20px;
+}
+
+#save .save-close {
+    float: right;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+#save .save-content {
+    padding: 20px;
+    font-family: monospace;
+    font-size: 16px;
+    margin-top: 50px;
 }
 
 .hidden {

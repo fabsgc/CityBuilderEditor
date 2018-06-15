@@ -17,7 +17,8 @@ requirejs([
     'editor/Editor',
     'editor/Map',
     'editor/Menu',
-    'editor/Tile'
+    'editor/Tile',
+    'editor/Save'
 ], function () {
     var editor = new App.Editor();
     editor.Init();

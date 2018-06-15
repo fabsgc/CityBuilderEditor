@@ -15,16 +15,22 @@
     <div id="menu">
         <div id="menu-tool">
             <div class="menu-content">
-                <div id="tool-select" class="tool selected">
+                <div id="tool-select" class="tool" title="Select">
                     <span class="fa fa-mouse-pointer"></span>
                 </div>
-                <div id="tool-add" class="tool">
+                <div id="tool-add" class="tool selected" title="Add">
                     <span class="fa fa-plus"></span>
                 </div>
-                <div id="tool-delete" class="tool">
+                <div id="tool-undo" class="tool" title="Undo">
+                    <span class="fa fa-undo"></span>
+                </div>
+                <div id="tool-clear" class="tool" title="Clear">
                     <span class="fa fa-trash-alt"></span>
                 </div>
-                <div id="tool-save" class="tool">
+                <div id="tool-open" class="tool" title="Open">
+                    <span class="fa fa-folder-open"></span>
+                </div>
+                <div id="tool-save" class="tool" title="Save">
                     <span class="fa fa-save"></span>
                 </div>
             </div>
@@ -36,25 +42,30 @@
             <div class="menu-content">
             </div>
         </div>
-        <div id="menu-tile" class="hidden">
+        <div id="menu-tile">
             <div class="menu-title">
-                Options
+                Selected tiles
             </div>
-            <div class="menu-sprite">
-
-            </div>
-            <div class="menu-content">
-                <div id="option-rotate" class="option">
-                    <span class="fa fa-redo-alt"></span>
-                </div>
-                <div id="option-delete" class="option">
-                    <span class="fa fa-trash-alt"></span>
-                </div>
+            <div id="tile-list">
+                
             </div>
         </div>
     </div>
     <div id="sprites" class="hidden">
         
+    </div>
+    <div id="save" class="hidden">
+        <div class="save-top">
+            <div id="save-title" class="save-title">
+                Backup
+            </div>
+            <div id="save-close" class="save-close">
+                <span class="fa fa-times"></span>
+            </div>
+        </div>
+        <pre id="save-content" class="save-content">
+
+        </pre>
     </div>
 </body>
 </html>

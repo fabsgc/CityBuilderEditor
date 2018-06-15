@@ -34,18 +34,17 @@ App.Map = function(){
     /**
      * @method App.Map#Init
      * @public
-     * @return void
+     * @return {void}
      */
     this.Init = function() {
         _config = App.Config.Map;
-
         InitMap();
     }
 
     /**
      * @method App.Map#InitMap
      * @public
-     * @return void
+     * @return {void}
      */
     function InitMap() {
         _canvas = document.getElementById("map");
@@ -53,16 +52,54 @@ App.Map = function(){
         _canvas.setAttribute("height", String(_config.Height * _config.TileHeight));
 
         if (_canvas.getContext) {
-            _ctx = _canvas.getContext('2d');
+            _canvasContext = _canvas.getContext('2d');
+            _canvasContext.globalAlpha = 0.6;
         }
 
         _canvas.addEventListener('click', TileClickHandler);
     }
 
     /**
+     * @method App.Map#Draw
+     * @param {Tile[]} tileList
+     * @public
+     * @return {void}
+     */
+    this.Draw = function(tileList) {
+        tileList.forEach(function(tile){
+            var image = new Image();
+            image.src = tile.sprite.sprite;
+
+            var position = {
+                x: tile.position.x * _config.TileWidth,
+                y: tile.position.y * _config.TileHeight
+            }
+
+            if(tile.rotation == 0) {
+                _canvasContext.drawImage(image, position.x, position.y);
+            }
+            else {
+                DrawRotatedImage(image, position.x, position.y, tile.rotation);
+            }
+            
+            console.log("Draw " + tile.sprite.id + " at " + position.x + "/" + position.y);
+        });
+    }
+
+    /**
+     * @method App.Map#Clear
+     * @public
+     * @return {void}
+     */
+    this.Clear = function() {
+        console.log("Clear view");
+        _canvasContext.clearRect(0, 0, _canvas.width, _canvas.height);
+    }
+
+    /**
      * @method App.Map#TileClickHandler
      * @private
-     * @return void
+     * @return {void}
      */
     function TileClickHandler(e) {
         const scroll = {
@@ -83,8 +120,8 @@ App.Map = function(){
         console.log(mousePos);
         console.log(tileClicked);
 
-        var event = new CustomEvent('clickMap', { 
-            'detail': {
+        var event = new CustomEvent("clickMap", {
+            "detail": {
                 tile: tileClicked
             }
         });
@@ -93,19 +130,19 @@ App.Map = function(){
     }
 
     /**
-     * @method App.Map#Draw
-     * @param tileList {Tile[]}
+     * @method App.Map#DrawRotatedImage
+     * @param {Image} image
+     * @param {number} x
+     * @param {number} y
+     * @param {number} angle
      * @public
-     * @return void
+     * @return {void}
      */
-    this.Draw = function(tileList) {
-    }
-
-    /**
-     * @method App.Map#Clear
-     * @public
-     * @return void
-     */
-    this.Clear = function() {
+    function DrawRotatedImage(image, x, y, angle) { 
+        _canvasContext.save(); 
+        _canvasContext.translate(x + image.width/2, y + image.height/2);
+        _canvasContext.rotate(angle * Math.PI/180.0);
+        _canvasContext.drawImage(image, -(image.width/2), -(image.height/2));
+        _canvasContext.restore();
     }
 }
