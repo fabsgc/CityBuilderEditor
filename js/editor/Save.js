@@ -35,6 +35,7 @@ App.Save = function(){
                 model: tile.sprite.model,
                 position: tile.position,
                 rotation: tile.rotation,
+                token: tile.id
             }
 
             json.push(object);
@@ -74,6 +75,7 @@ App.Save = function(){
             xml += 'x="' + object.position.x + '" ';
             xml += 'y="' + object.position.y + '" ';
             xml += 'rotation="' + object.rotation + '" ';
+            xml += 'token="' + object.token + '" ';
             xml += "/>";
         });
 
