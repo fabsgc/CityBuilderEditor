@@ -54,7 +54,7 @@ App.Editor = function(){
     var _lastTileClicked = {};
 
     /**
-     * @method App.Map#Init
+     * @method App.Editor#Init
      * @public
      * @return {void}
      */

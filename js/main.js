@@ -2,7 +2,6 @@
  * @description Entry point of the application
  * @author Hikma <contact@hikma.io>
  * @licence MIT
- * @class App.Editor
  * @constructor
  */
 

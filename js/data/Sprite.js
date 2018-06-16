@@ -197,6 +197,17 @@ App.Config.Sprite = {
             material: "WindTurbine",
             model: "WindTurbine",
             selected: false
+        },
+        {
+            id: "trafficlight",
+            name: "Traffic light",
+            width: 1,
+            height: 1,
+            sprite: "asset/sprite/trafficlight.png",
+            thumbnail: "asset/thumbnail/trafficlight.png",
+            material: "TrafficLight",
+            model: "TrafficLight",
+            selected: false
         }
     ]
 }
