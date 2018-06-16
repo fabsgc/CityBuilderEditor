@@ -129,7 +129,18 @@ App.Config.Sprite = {
             sprite: "asset/sprite/grass-1.png",
             thumbnail: "asset/thumbnail/grass-1.png",
             material: "Grass-1",
-            model: "Grass-1",
+            model: "Grass",
+            selected: false
+        },
+        {
+            id: "water-1",
+            name: "Water 1",
+            width: 5,
+            height: 5,
+            sprite: "asset/sprite/water-1.png",
+            thumbnail: "asset/thumbnail/water-1.png",
+            material: "Water-1",
+            model: "Water",
             selected: false
         },
         {
