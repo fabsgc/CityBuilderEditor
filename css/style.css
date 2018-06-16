@@ -258,6 +258,7 @@ html {
     font-size: 14px;
     margin: 10px;
     border: 4px solid rgb(83, 128, 167);
+    overflow-x: auto;
 }
 
 .hidden {

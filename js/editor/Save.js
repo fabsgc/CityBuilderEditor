@@ -33,6 +33,7 @@ App.Save = function(){
                 height: tile.sprite.height,
                 material: tile.sprite.material,
                 model: tile.sprite.model,
+                modelDirectory: tile.sprite.modelDirectory,
                 position: tile.position,
                 rotation: tile.rotation,
                 token: tile.id
@@ -52,7 +53,7 @@ App.Save = function(){
      * @return {void}
      */
     function DisplayJSON(json) {
-        document.getElementById("save-content-json").innerHTML = JSON.stringify(json, null, 2);
+        document.getElementById("save-content-json").innerHTML = JSON.stringify(json, null, 4);
     }
 
     /**
