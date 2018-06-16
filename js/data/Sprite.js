@@ -151,7 +151,7 @@ App.Config.Sprite = {
             height: 5,
             sprite: "asset/sprite/water-1.png",
             thumbnail: "asset/thumbnail/water-1.png",
-            material: "Water-1",
+            material: "Water",
             model: "Water",
             modelDirectory: "asset/model/Nature/",
             selected: false

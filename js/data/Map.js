@@ -1,6 +1,6 @@
 App.Config.Map = {
-    Width: 100,
-    Height: 50,
+    Width: 120,
+    Height: 80,
     TileWidth: 50,
     TileHeight: 50
 }
